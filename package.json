@@ -1,0 +1,35 @@
+{
+  "name": "hello-api",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "sonar:up": "bash ./run-sonarqube.sh",
+    "sonar:down": "docker rm -f sonarqube || true",
+    "sonar:logs": "docker logs -f sonarqube",
+    "sonar:scan": "bash ./scan.sh",
+    "sonar:health": "bash -lc 'curl -fsS ${SONAR_HOST_URL:-http://localhost:9000}/api/system/health || true'",
+    "setup:sh": "chmod +x run-sonarqube.sh scan.sh || true",
+    "sonar": "./scan.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.46.0",
+    "@typescript-eslint/parser": "^8.46.0",
+    "dotenv": "^17.2.3",
+    "eslint": "^9.37.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  }
+}

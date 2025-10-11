@@ -1,0 +1,43 @@
+# ────────────────────────────────
+# Node / TypeScript
+# ────────────────────────────────
+node_modules/
+dist/
+build/
+*.log
+*.tmp
+*.tsbuildinfo
+
+
+.eslintcache
+.eslint-report.json
+eslint-report.json
+.scannerwork/
+.sonar/
+coverage/
+.lcov-report/
+docker-compose.override.yml
+.env.sonar
+
+sonarqube_data/
+sonarqube_extensions/
+sonarqube_logs/
+
+.env
+.env.*
+!.env.example  # se permite subir un archivo de ejemplo
+
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ────────────────────────────────
+# Copilot / Prompts temporales
+# ────────────────────────────────
+# No ignoramos los prompts oficiales del proyecto:
+# .github/prompts/SonarFixAssistant.md se versiona
+# Pero ignoramos pruebas temporales:
+.github/prompts/temp_*.md
