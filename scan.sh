@@ -23,6 +23,7 @@ curl -sSf -u "$SONAR_TOKEN:" "$SONAR_HOST_URL/api/authentication/validate" >/dev
 }
 
 echo " Ejecutando análisis SonarQube contra: $TARGET_URL"
+docker pull sonarsource/sonar-scanner-cli
 docker run --rm \
   --add-host=host.docker.internal:host-gateway \
   -e SONAR_HOST_URL="$TARGET_URL" \
