@@ -3,14 +3,17 @@ import express, { Request, Response } from 'express';
 export function createServer() {
   const app = express();
 
-  //  Error intencional: uso de tipo `any` (S4325)
   app.get('/hello', (req: Request, res: Response): any => {
-    //  Error intencional: catch genérico (S2221)
+    //  codigo corregido
     try {
-      const name = req.query.name || 'World';
-      res.json({ message: `Hello, ${name}!` });
-    } catch (error: any) {
-      res.status(500).json({ error: 'Unexpected error occurred' });
+      const name = typeof req.query.name === 'string' ? req.query.name : 'World';
+      res.json({ message: `Hello, ${name}` });
+    } catch (error) {
+      if (error instanceof Error) {
+        res.status(500).json({ error: error.message });
+      } else {
+        res.status(500).json({ error: 'Unexpected error occurred' });
+      }
     }
   });
 
