@@ -17,7 +17,7 @@ if [[ "$TARGET_URL" == http://localhost:* ]]; then
   TARGET_URL="${TARGET_URL/localhost/host.docker.internal}"
 fi
 
-echo "🔎 Comprobando salud de Sonar en: $SONAR_HOST_URL"
+echo "Comprobando salud de Sonar en: $SONAR_HOST_URL"
 curl -sSf -u "$SONAR_TOKEN:" "$SONAR_HOST_URL/api/authentication/validate" >/dev/null   || {
   echo " No puedo conectar a $SONAR_HOST_URL"; exit 1;
 }

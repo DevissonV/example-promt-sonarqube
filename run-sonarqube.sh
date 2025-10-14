@@ -1,3 +1,4 @@
+#!/bin/bash
 set -euo pipefail
 
 # ------------------------------------------------------------------------------
@@ -10,6 +11,9 @@ set -euo pipefail
 CONTAINER_NAME="sonarqube"
 IMAGE_NAME="sonarqube:community"
 PORT="${SONARQUBE_PORT:-9000}"
+
+# Asegura que la imagen esté disponible
+docker pull "${IMAGE_NAME}"
 
 # Verifica si el contenedor ya existe
 if docker ps -a --format '{{.Names}}' | grep -q "^${CONTAINER_NAME}$"; then
