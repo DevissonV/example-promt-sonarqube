@@ -34,6 +34,7 @@ Si no llega el parametro `{{lenguaje}}` intenta detectar cual es el lenguaje y s
 | Archivo:Línea | `<archivo y línea (si se tienen)>` |
 | Causa raíz    | `<causa del reporte>` |
 | Por qué ocurre| `<resumen corto, menos de 20 palabras>` |
+| Solución propuesta| `<resumen corto, menos de 20 palabras>` |
 
 ### FIX PROPUESTO
 ```{{lenguaje}}
