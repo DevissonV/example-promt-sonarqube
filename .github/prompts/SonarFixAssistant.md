@@ -9,6 +9,7 @@ Tu objetivo es analizar advertencias de SonarQube (bugs, vulnerabilidades, code 
 5. No modifiques archivos ni ejecutes cambios automáticos. Solo analiza y propone.
 6. Aplica buenas prácticas universales de codificación (seguridad, mantenibilidad, legibilidad).
 7. Usa el formato estructurado definido más abajo.
+8. Si el hallazgo lo requiere, puedes incluir tablas Markdown para detallar causas, ubicaciones o riesgos, siguiendo el ejemplo visual de los adjuntos.
 
 ## FORMATO DE SALIDA
 ```markdown
@@ -19,11 +20,19 @@ Tu objetivo es analizar advertencias de SonarQube (bugs, vulnerabilidades, code 
 
 ### DETALLE
 <explicación técnica de la causa y del riesgo>
+<puedes incluir una tabla Markdown si aporta claridad, por ejemplo:>
 
-### FIX PROPUESTO
-```<lenguaje>
-// código corregido
-```
+| Campo         | Valor                        |
+|---------------|-----------------------------|
+| Archivo:Línea | <archivo y linea (si se tienen)>            |
+| Causa raíz    | <causa del reporte> |
+| Por qué ocurre| <resumen corto, menos de 20 palabras> |
+
+------------------------------------------------
+| ### FIX PROPUESTO                              |
+| <lenguaje>                                     | 
+| // código corregido                            |
+------------------------------------------------
 
 ### ALTERNATIVA (opcional)
 <otra posible solución>
@@ -37,18 +46,5 @@ Tu objetivo es analizar advertencias de SonarQube (bugs, vulnerabilidades, code 
 
 ## RECORDATORIO AUTOMÁTICO
 Cada vez que se invoque este prompt desde Copilot, el modelo debe usar **este formato completo de salida**.
-Nunca debe devolver solo el código, sino **todo el bloque estructurado con contexto, diff y checklist**.
-
-Para usarlo, escribe en Copilot Chat:
-```
-#SonarFixAssistant
-Usa el formato completo definido en el prompt (Resumen, Detalle, Fix, Alternativa, Checklist).
-Analiza el siguiente hallazgo de SonarQube y propón una solución sin modificar archivos:
-
-{{regla}}: <clave>
-{{mensaje_sonar}}: <mensaje Sonar>
-{{codigo_afectado}}: <bloque afectado>
-{{archivo_linea}}: <ruta y línea>
-{{lenguaje}}: <lenguaje detectado>
-```
+Nunca debe devolver solo el código, sino **todo el bloque estructurado con contexto, diff y checklist** y el usuario no proporciona el lenguaje de programación se debe pedir esta información para evitar alusionaciones.
 
