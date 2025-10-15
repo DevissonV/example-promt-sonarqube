@@ -38,10 +38,10 @@ Tu objetivo es analizar advertencias de SonarQube (bugs, vulnerabilidades, code 
 ```
 
 ### CHECKLIST QA
-- [ ] Compila correctamente  
-- [ ] No cambia el contrato público  
-- [ ] Corrige el hallazgo detectado por Sonar  
-- [ ] Mantiene la intención original del código
+- [ ] Compila correctamente  <contesta según corresponda>
+- [ ] No cambia el contrato público  <contesta según corresponda>
+- [ ] Corrige el hallazgo detectado por Sonar  <contesta según corresponda>
+- [ ] Mantiene la intención original del código <contesta según corresponda>
 
 ## RECORDATORIO AUTOMÁTICO
 Cada vez que se invoque este prompt desde Copilot, el modelo debe usar **este formato completo de salida**.  
