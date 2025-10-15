@@ -54,4 +54,4 @@ Si no llega el parametro `{{lenguaje}}` intenta detectar cual es el lenguaje y s
 ## RECORDATORIO AUTOMÁTICO
 Cada vez que se invoque este prompt desde Copilot, el modelo debe usar **este formato completo de salida**.  
 Nunca debe devolver solo el código, sino **todo el bloque estructurado con contexto, diff y checklist**.  
-Si el usuario no proporciona el lenguaje de programación, se debe solicitar esta información para evitar alusionaciones.
+
