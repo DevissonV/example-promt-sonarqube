@@ -12,39 +12,38 @@ Tu objetivo es analizar advertencias de SonarQube (bugs, vulnerabilidades, code 
 8. Si el hallazgo lo requiere, puedes incluir tablas Markdown para detallar causas, ubicaciones o riesgos, siguiendo el ejemplo visual de los adjuntos.
 
 ## FORMATO DE SALIDA
-```markdown
 ### RESUMEN
-- Regla: <clave>
-- Archivo:Línea: <ubicación>
-- Impacto: <breve descripción>
+- Regla: `<clave>`
+- Archivo:Línea: `<ubicación>`
+- Impacto: `<breve descripción>`
 
 ### DETALLE
-<explicación técnica de la causa y del riesgo>
-<puedes incluir una tabla Markdown si aporta claridad, por ejemplo:>
+`<explicación técnica de la causa y del riesgo>`  
+`<puedes incluir una tabla Markdown si aporta claridad, por ejemplo:>`
 
 | Campo         | Valor                        |
 |---------------|-----------------------------|
-| Archivo:Línea | <archivo y linea (si se tienen)>            |
-| Causa raíz    | <causa del reporte> |
-| Por qué ocurre| <resumen corto, menos de 20 palabras> |
+| Archivo:Línea | `<archivo y línea (si se tienen)>` |
+| Causa raíz    | `<causa del reporte>` |
+| Por qué ocurre| `<resumen corto, menos de 20 palabras>` |
 
-------------------------------------------------
-| ### FIX PROPUESTO                              |
-| <lenguaje>                                     | 
-| // código corregido                            |
-------------------------------------------------
+### FIX PROPUESTO
+```<lenguaje>
+// código corregido
+```
 
 ### ALTERNATIVA (opcional)
-<otra posible solución>
+```<lenguaje>
+// otra posible solución
+```
 
 ### CHECKLIST QA
 - [ ] Compila correctamente  
 - [ ] No cambia el contrato público  
 - [ ] Corrige el hallazgo detectado por Sonar  
 - [ ] Mantiene la intención original del código
-```
 
 ## RECORDATORIO AUTOMÁTICO
-Cada vez que se invoque este prompt desde Copilot, el modelo debe usar **este formato completo de salida**.
-Nunca debe devolver solo el código, sino **todo el bloque estructurado con contexto, diff y checklist** y el usuario no proporciona el lenguaje de programación se debe pedir esta información para evitar alusionaciones.
-
+Cada vez que se invoque este prompt desde Copilot, el modelo debe usar **este formato completo de salida**.  
+Nunca debe devolver solo el código, sino **todo el bloque estructurado con contexto, diff y checklist**.  
+Si el usuario no proporciona el lenguaje de programación, se debe solicitar esta información para evitar alusionaciones.
