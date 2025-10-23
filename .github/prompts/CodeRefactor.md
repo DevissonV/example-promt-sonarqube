@@ -175,7 +175,7 @@ Contratos públicos: calc(op,a,b) → string|number con mismos mensajes
 ### 💡 Salida esperada (resumen abreviado)
 - **Lenguaje detectado:** JavaScript  
 - **Contratos:** `calc(op,a,b)` (intacto)  
-- **Olores:** función dios, condicionales anidados, mezcla semántica.  
+- **Code smells:** función dios, condicionales anidados, mezcla semántica.  
 - **Beneficios:** menor complejidad, extensión por mapa, tests claros.
 
 **Snippet Antes/Después (extract + OCP):**
