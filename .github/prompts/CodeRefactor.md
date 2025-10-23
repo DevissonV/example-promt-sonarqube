@@ -63,7 +63,7 @@ Tu misión es **refactorizar internamente** el código dado para hacerlo **más 
 
 - **Lenguaje:** [indica detectado o provisto]  
 - **Contratos públicos identificados:** [lista]  
-- **Olores de código:** [función dios, condicionales anidados, duplicación, etc.]  
+- **Code smells:** [función dios, condicionales anidados, duplicación, etc.]  
 - **Violaciones SOLID:** [por sección]  
 - **Métricas sugeridas:** LOC/función, complejidad, acoplamiento/cohesión.
 
@@ -96,7 +96,7 @@ Tu misión es **refactorizar internamente** el código dado para hacerlo **más 
 ### 🧭 RESUMEN
 - **Lenguaje:** [detectado/provisto]  
 - **Contratos públicos:** [lista breve]  
-- **Principales olores:** [3–5 bullets]  
+- **Principales Code smells:** [3–5 bullets]  
 - **Beneficios esperados:** [3–5 bullets]
 
 ### 🧠 DETALLE TÉCNICO
@@ -167,7 +167,7 @@ Incluye 2–4 ejemplos **Antes/Después** (bloques completos).
 
 ### 🧾 Entrada
 ```
-Lenguaje: (no provisto)
+Lenguaje: {{lenguaje}}  
 Código: function calc(op,a,b){ if(op==='add'){return a+b}else if(op==='div'){if(b===0)return 'Err/0';return a/b}else return 'bad';}
 Contratos públicos: calc(op,a,b) → string|number con mismos mensajes
 ```
