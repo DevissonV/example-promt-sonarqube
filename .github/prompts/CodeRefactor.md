@@ -64,7 +64,28 @@ Puedes usar esta tabla si aporta claridad:
 ---
 
 ### ✂️ SNIPPETS / DIFFS CLAVE
-Incluye **2–4 bloques Antes/Después** con código completo, respetando los contratos públicos.
+
+> **IMPORTANTE:** Señala explícitamente **qué es código viejo** y **qué es código nuevo**. Usa los rótulos y comentarios que siguen para evitar confusiones.
+
+#### 🟠 Antes — **CÓDIGO ORIGINAL (no refactorizado)**
+```{{lenguaje}}
+// BEGIN ORIGINAL
+// file: <ruta/archivo-original.ext>
+// descripción: versión previa sin refactor
+<pegar_aquí_el_código_original>
+// END ORIGINAL
+```
+
+#### 🟢 Después — **CÓDIGO REFACTORIZADO (misma firma pública/contratos)**
+```{{lenguaje}}
+// BEGIN REFACTORED
+// file: <ruta/archivo-refactor.ext>
+// descripción: versión refactorizada que conserva firmas, mensajes y salidas
+<pegar_aquí_el_código_refactorizado>
+// END REFACTORED
+```
+
+> Si hay múltiples archivos afectados, repite el par **Antes/Después** por archivo y especifica su **ruta** en el encabezado de cada bloque.
 
 ---
 
@@ -121,10 +142,10 @@ Contratos públicos: calc(op,a,b) → string|number con mismos mensajes
 
 #### Snippet (Antes/Después)
 ```js
-// Antes
+// Antes (ORIGINAL)
 function calc(op,a,b){ if(op==='add'){return a+b}else if(op==='div'){if(b===0)return 'Err/0';return a/b}else return 'bad';}
 
-// Después (contrato intacto)
+// Después (REFACTORED, contrato intacto)
 const operations = {
   add: (x,y)=> x + y,
   div: (x,y)=> y===0 ? 'Err/0' : x / y,
